@@ -1,5 +1,5 @@
 /*
- * HNAppDelegate.h
+ * HNCanvasExport.h
  *
  * Copyright (c) 2013 Hironori Ichimiya <hiron@hironytic.com>
  *
@@ -23,10 +23,12 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <JavaScriptCore/JavaScriptCore.h>
 
-@interface HNAppDelegate : UIResponder <UIApplicationDelegate>
+@protocol HNCanvasExport <JSExport>
 
-@property (strong, nonatomic) UIWindow *window;
+- (void)moveTo:(double)x :(double)y;       // moveTo(x, y)
+- (void)lineTo:(double)x :(double)y;       // lineTo(x, y)
 
 @end

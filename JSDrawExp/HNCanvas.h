@@ -1,5 +1,5 @@
 /*
- * HNAppDelegate.h
+ * HNCanvas.h
  *
  * Copyright (c) 2013 Hironori Ichimiya <hiron@hironytic.com>
  *
@@ -23,10 +23,12 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "HNCanvasExport.h"
 
-@interface HNAppDelegate : UIResponder <UIApplicationDelegate>
+@interface HNCanvas : NSObject <HNCanvasExport>
 
-@property (strong, nonatomic) UIWindow *window;
+- (void)beginDrawingWithSize:(CGSize)size;
+- (UIImage *)endDrawing;
 
 @end

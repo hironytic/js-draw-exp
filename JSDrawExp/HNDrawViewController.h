@@ -1,5 +1,5 @@
 /*
- * HNAppDelegate.h
+ * HNDrawViewController.h
  *
  * Copyright (c) 2013 Hironori Ichimiya <hiron@hironytic.com>
  *
@@ -25,8 +25,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HNAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface HNDrawViewController : UIViewController
 
 @end

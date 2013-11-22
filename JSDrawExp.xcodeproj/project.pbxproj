@@ -19,6 +19,9 @@
 		50A74F80183F8DCE002AA55C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A74F68183F8DCE002AA55C /* UIKit.framework */; };
 		50A74F88183F8DCE002AA55C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50A74F86183F8DCE002AA55C /* InfoPlist.strings */; };
 		50A74F8A183F8DCE002AA55C /* JSDrawExpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A74F89183F8DCE002AA55C /* JSDrawExpTests.m */; };
+		50A74F95183F8E1E002AA55C /* HNDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A74F94183F8E1E002AA55C /* HNDrawViewController.m */; };
+		50A74F99183F95E0002AA55C /* HNCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A74F98183F95E0002AA55C /* HNCanvas.m */; };
+		50A74F9C183FA23D002AA55C /* draw.js in Resources */ = {isa = PBXBuildFile; fileRef = 50A74F9A183FA212002AA55C /* draw.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		50A74F85183F8DCE002AA55C /* JSDrawExpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JSDrawExpTests-Info.plist"; sourceTree = "<group>"; };
 		50A74F87183F8DCE002AA55C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		50A74F89183F8DCE002AA55C /* JSDrawExpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSDrawExpTests.m; sourceTree = "<group>"; };
+		50A74F93183F8E1E002AA55C /* HNDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNDrawViewController.h; sourceTree = "<group>"; };
+		50A74F94183F8E1E002AA55C /* HNDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNDrawViewController.m; sourceTree = "<group>"; };
+		50A74F96183F952E002AA55C /* HNCanvasExport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HNCanvasExport.h; sourceTree = "<group>"; };
+		50A74F97183F95E0002AA55C /* HNCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCanvas.h; sourceTree = "<group>"; };
+		50A74F98183F95E0002AA55C /* HNCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCanvas.m; sourceTree = "<group>"; };
+		50A74F9A183FA212002AA55C /* draw.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = draw.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +118,11 @@
 			children = (
 				50A74F73183F8DCE002AA55C /* HNAppDelegate.h */,
 				50A74F74183F8DCE002AA55C /* HNAppDelegate.m */,
+				50A74F93183F8E1E002AA55C /* HNDrawViewController.h */,
+				50A74F94183F8E1E002AA55C /* HNDrawViewController.m */,
+				50A74F96183F952E002AA55C /* HNCanvasExport.h */,
+				50A74F97183F95E0002AA55C /* HNCanvas.h */,
+				50A74F98183F95E0002AA55C /* HNCanvas.m */,
 				50A74F76183F8DCE002AA55C /* Images.xcassets */,
 				50A74F6B183F8DCE002AA55C /* Supporting Files */,
 			);
@@ -122,6 +136,7 @@
 				50A74F6D183F8DCE002AA55C /* InfoPlist.strings */,
 				50A74F70183F8DCE002AA55C /* main.m */,
 				50A74F72183F8DCE002AA55C /* JSDrawExp-Prefix.pch */,
+				50A74F9A183FA212002AA55C /* draw.js */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -220,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A74F9C183FA23D002AA55C /* draw.js in Resources */,
 				50A74F6F183F8DCE002AA55C /* InfoPlist.strings in Resources */,
 				50A74F77183F8DCE002AA55C /* Images.xcassets in Resources */,
 			);
@@ -241,7 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A74F75183F8DCE002AA55C /* HNAppDelegate.m in Sources */,
+				50A74F95183F8E1E002AA55C /* HNDrawViewController.m in Sources */,
 				50A74F71183F8DCE002AA55C /* main.m in Sources */,
+				50A74F99183F95E0002AA55C /* HNCanvas.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,20 +1,51 @@
-//
-//  HNAppDelegate.m
-//  JSDrawExp
-//
-//  Created by ichi on 2013/11/22.
-//  Copyright (c) 2013年 Hironytic. All rights reserved.
-//
+/*
+ * HNAppDelegate.m
+ *
+ * Copyright (c) 2013 Hironori Ichimiya <hiron@hironytic.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #import "HNAppDelegate.h"
+#import "HNDrawViewController.h"
 
 @implementation HNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // copy draw.js to Documents folder if it's not found.
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *jsPath = [documentsPath stringByAppendingPathComponent:@"draw.js"];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if (![fm fileExistsAtPath:jsPath]) {
+        NSString *bundleDrawJs = [[NSBundle mainBundle] pathForResource:@"draw" ofType:@"js"];
+        [fm copyItemAtPath:bundleDrawJs toPath:jsPath error:NULL];
+    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+
+    HNDrawViewController *drawViewController = [[HNDrawViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:drawViewController];
+    self.window.rootViewController = navController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
